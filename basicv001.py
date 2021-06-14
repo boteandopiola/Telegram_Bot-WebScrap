@@ -11,5 +11,6 @@ def telegram_bot_sendtext(bot_message):
     return response.json()
 
 
-test = telegram_bot_sendtext("reenvia a grupos")
+test = telegram_bot_sendtext("Este Bot les recuerda que los ama mucho ❤️")
+test = telegram_bot_sendtext("PD: David deja de tocarte con la Chabona")
 #print(test)
