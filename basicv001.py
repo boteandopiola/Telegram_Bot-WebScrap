@@ -1,4 +1,4 @@
-import telebot
+from telebot import TeleBot
 import time
 import urllib
 import schedule
