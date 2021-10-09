@@ -1,16 +1,21 @@
-import requests
+import telebot
+import time
+import urllib
+import schedule
 
-def telegram_bot_sendtext(bot_message):
+TOKEN = '2094252378:AAHrWLPNeAc6fPriFBxbvDMdSe_JbzLq79I' # Ponemos nuestro Token generado con el @BotFather
 
-    bot_token = '2094252378:AAHrWLPNeAc6fPriFBxbvDMdSe_JbzLq79I'
-    bot_chatID = '843423661'
-    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
+def report():
+    tb = telebot.TeleBot('2094252378:AAHrWLPNeAc6fPriFBxbvDMdSe_JbzLq79I')
+    url='http://www.bcra.gov.ar/Pdfs/PublicacionesEstadisticas/infomondiae.pdf'
+    f = open('out.pdf','wb')
+    f.write(urllib.request.urlopen(url).read())
+    f.close()
+    tb.send_document('-703364548', url)
+    tb.send_message('-703364548', 'Te dejo el informe actualizado Rey ;)')
 
-    response = requests.get(send_text)
-
-    return response.json()
-
-
-test = telegram_bot_sendtext("Este Bot les recuerda que los ama mucho ❤️")
-test = telegram_bot_sendtext("PD: David deja de tocarte con la Chabona")
-#print(test)
+    schedule.every().day.at("20:00").do(report)
+    
+while True:
+    schedule.run_pending()
+    time.sleep(1)
