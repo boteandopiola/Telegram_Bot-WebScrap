@@ -1,4 +1,4 @@
 telebot
 time
-urllib
+urllib3
 schedule
