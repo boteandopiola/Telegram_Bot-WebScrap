@@ -1,3 +1,4 @@
-telebot
-urllib
-schedule
+import telebot
+import time
+import urllib
+import schedule
