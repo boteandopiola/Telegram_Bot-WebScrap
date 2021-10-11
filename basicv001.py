@@ -14,7 +14,7 @@ def report():
     tb.send_document('843423661', url)
     tb.send_message('843423661', 'Te dejo el informe actualizado Rey ;)')
 
-schedule.every().day.at("12:50").do(report)
+schedule.every().day.at("13:20").do(report)
 while True:
     schedule.run_pending()
     time.sleep(1)
