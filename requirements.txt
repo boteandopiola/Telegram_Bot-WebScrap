@@ -1,3 +1,2 @@
 telebot
 urllib3
-schedule
