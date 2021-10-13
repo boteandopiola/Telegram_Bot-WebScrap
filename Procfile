@@ -1,1 +1,1 @@
-worker: python basicv001.py
+worker: python basic.py
