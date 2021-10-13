@@ -9,5 +9,5 @@ url='http://www.bcra.gov.ar/Pdfs/PublicacionesEstadisticas/infomondiae.pdf'
 f = open('out.pdf','wb')
 f.write(urllib.request.urlopen(url).read())
 f.close()
-tb.send_document('843423661', url)
-tb.send_message('843423661', 'Te dejo el informe actualizado Rey ;)')
+tb.send_document('-703364548', url)
+tb.send_message('-703364548', 'Te dejo el informe actualizado Rey ;)')
